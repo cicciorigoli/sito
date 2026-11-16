@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="it" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciccio Rigoli — Public Speaking & Performance</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            accent: '#fa029b',
+                            dark: '#111111',
+                            light: '#ffffff',
+                            muted: '#666666',
+                            card: '#f9f9f9',
+                            border: '#e5e5e5'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .accent-glow {
+            box-shadow: 0 4px 20px -2px rgba(250, 2, 155, 0.25);
+        }
+    </style>
+</head>
+<body class="bg-brand-light text-brand-dark font-sans antialiased selection:bg-brand-accent selection:text-white">
+
+    <!-- NAVIGATION BAR -->
+    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-brand-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="#" class="flex flex-col">
+                    <span class="text-xl font-extrabold tracking-tight">CICCIO RIGOLI</span>
+                    <span class="text-xs text-brand-muted tracking-widest uppercase">Public Speaking & Performance</span>
+                </a>
+                
+                <nav class="hidden md:flex space-x-8 text-sm font-medium">
+                    <a href="#chi-sono" class="hover:text-brand-accent transition-colors">Chi sono</a>
+                    <a href="#corsi" class="hover:text-brand-accent transition-colors">Corsi</a>
+                    <a href="#privati" class="hover:text-brand-accent transition-colors">Per i privati</a>
+                    <a href="#aziende" class="hover:text-brand-accent transition-colors">Per le aziende</a>
+                    <a href="#recensioni" class="hover:text-brand-accent transition-colors">Dicono di me</a>
+                    <a href="#libri" class="hover:text-brand-accent transition-colors">Libri</a>
+                    <a href="#spettacoli" class="hover:text-brand-accent transition-colors">Spettacoli</a>
+                </nav>
+
+                <div class="hidden md:flex items-center">
+                    <button onclick="openModal('Generale')" class="bg-brand-dark hover:bg-brand-accent text-white px-5 py-2.5 rounded-lg text-sm font-medium transition-all duration-200">
+                        Contattami
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-lg text-brand-dark hover:bg-gray-100 focus:outline-none">
+                    <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-brand-border px-4 pt-2 pb-6 space-y-3">
+            <a href="#chi-sono" onclick="toggleMobileMenu()" class="block py-2 text-base font-medium hover:text-brand-accent">Chi sono</a>
+            <a href="#corsi" onclick="toggleMobileMenu()" class="block py-2 text-base font-medium hover:text-brand-accent">Corsi</a>
+            <a href="#privati" onclick="toggleMobileMenu()" class="block py-2 text-base font-medium hover:text-brand-accent">Per i privati</a>
+            <a href="#aziende" onclick="toggleMobileMenu()" class="block py-2 text-base font-medium hover:text-brand-accent">Per le aziende</a>
+            <a href="#recensioni" onclick="toggleMobileMenu()" class="block py-2 text-base font-medium hover:text-brand-accent">Dicono di me</a>
+            <a href="#libri" onclick="toggleMobileMenu()" class="block py-2 text-base font-medium hover:text-brand-accent">Libri</a>
+            <a href="#spettacoli" onclick="toggleMobileMenu()" class="block py-2 text-base font-medium hover:text-brand-accent">Spettacoli</a>
+            <button onclick="toggleMobileMenu(); openModal('Generale')" class="w-full text-center bg-brand-dark text-white py-3 rounded-lg font-medium">Contattami</button>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="py-16 md:py-24 bg-gradient-to-b from-gray-50 to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-8">
+                    <div class="inline-flex items-center gap-2 bg-brand-accent/10 border border-brand-accent/20 px-3.5 py-1.5 rounded-full text-xs font-semibold text-brand-accent">
+                        <span class="w-2 h-2 rounded-full bg-brand-accent animate-pulse"></span>
+                        Public Poetry Speaking
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-brand-dark leading-[1.1]">
+                        Esprimi esattamente quello che hai in testa, con chiarezza e professionalità.
+                    </h1>
+
+                    <p class="text-lg sm:text-xl text-brand-muted font-normal max-w-2xl leading-relaxed">
+                        Formazione sul Public Speaking per manager, professionisti e privati. Poca teoria, tante tecniche pratiche prese dal palco, dalla stand-up comedy e dalla comunicazione dal vivo.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4 pt-2">
+                        <a href="#corsi" class="inline-flex justify-center items-center bg-brand-accent hover:bg-brand-accent/90 text-white font-semibold px-8 py-4 rounded-lg text-base shadow-sm hover:shadow-md transition-all duration-200 accent-glow">
+                            Scopri i corsi
+                        </a>
+                        <a href="#aziende" class="inline-flex justify-center items-center bg-white hover:bg-gray-50 text-brand-dark font-semibold px-8 py-4 rounded-lg text-base border border-brand-border transition-all duration-200">
+                            Per le aziende
+                        </a>
+                    </div>
+
+                    <!-- Highlights Stats -->
+                    <div class="grid grid-cols-3 gap-6 pt-8 border-t border-brand-border">
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-extrabold text-brand-dark">100%</div>
+                            <div class="text-xs sm:text-sm text-brand-muted mt-0.5">Pratico & applicabile</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-extrabold text-brand-dark">25+</div>
+                            <div class="text-xs sm:text-sm text-brand-muted mt-0.5">Anni sul palco</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-extrabold text-brand-dark">20+</div>
+                            <div class="text-xs sm:text-sm text-brand-muted mt-0.5">Anni in azienda</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Profile Photo Card -->
+                <div class="lg:col-span-5">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <div class="aspect-[4/5] bg-gray-200 rounded-2xl overflow-hidden border border-brand-border shadow-xl flex items-center justify-center bg-gradient-to-tr from-gray-900 to-gray-800 text-white relative group">
+                            <div class="absolute inset-0 bg-cover bg-center opacity-90 transition-transform duration-500 group-hover:scale-105" style="background-image: url('https://images.unsplash.com/photo-1475721027785-f74eccf877e2?q=80&w=1000&auto=format&fit=crop');"></div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                            
+                            <div class="absolute bottom-6 left-6 right-6 text-white">
+                                <span class="bg-brand-accent text-white text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded">Foto Ufficiale</span>
+                                <h3 class="text-2xl font-bold mt-2">Ciccio Rigoli</h3>
+                                <p class="text-sm text-gray-300">Speaker, Formatore & Performer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: CHI SONO -->
+    <section id="chi-sono" class="py-20 bg-white border-t border-brand-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                <div class="lg:col-span-4">
+                    <span class="text-xs font-bold uppercase tracking-widest text-brand-accent">Chi sono</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-dark mt-2">Francesco 'Ciccio' Rigoli</h2>
+                    <p class="text-base text-brand-muted mt-3 font-medium">Comunicatore, speaker, stand-up comedian, scrittore e formatore.</p>
+                </div>
+
+                <div class="lg:col-span-8 space-y-6 text-base text-gray-700 leading-relaxed">
+                    <p class="text-lg font-medium text-brand-dark border-l-4 border-brand-accent pl-4 py-1">
+                        Insegno alle persone a parlare in pubblico senza morire d'ansia e senza sembrare un sintetizzatore vocale aziendale.
+                    </p>
+                    <p>
+                        Ho passato anni sul palcoscenico tra poetry slam, monologhi di stand-up comedy e presentazioni aziendali. Questa esperienza diretta mi ha insegnato la cosa più importante: il pubblico non perdona la noia, ma premia sempre l'autenticità e il ritmo.
+                    </p>
+                    <p>
+                        Nel mio lavoro di formatore applico la stessa rigida disciplina della performance dal vivo al mondo del business e della comunicazione professionale. Che tu debba presentare un pitch a dei finanziatori o un report al tuo team, la regola non cambia: devi saper catturare l'attenzione subito e mantenerla alta.
+                    </p>
+
+                    <div class="pt-6">
+                        <h4 class="font-bold text-brand-dark mb-4 text-lg">Il mio approccio</h4>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                            <div class="p-4 bg-gray-50 rounded-lg border border-brand-border">
+                                <span class="text-brand-accent font-extrabold text-lg block mb-1">01</span>
+                                <h5 class="font-bold text-brand-dark text-sm mb-1">Zero sovrastrutture</h5>
+                                <p class="text-xs text-brand-muted">Niente gesti plastici da finto politico. Lavoriamo sulla tua voce vera.</p>
+                            </div>
+                            <div class="p-4 bg-gray-50 rounded-lg border border-brand-border">
+                                <span class="text-brand-accent font-extrabold text-lg block mb-1">02</span>
+                                <h5 class="font-bold text-brand-dark text-sm mb-1">Struttura e ritmo</h5>
+                                <p class="text-xs text-brand-muted">Come scrivere un discorso efficace basandosi sui tempi comici e teatrali.</p>
+                            </div>
+                            <div class="p-4 bg-gray-50 rounded-lg border border-brand-border">
+                                <span class="text-brand-accent font-extrabold text-lg block mb-1">03</span>
+                                <h5 class="font-bold text-brand-dark text-sm mb-1">Gestione dello stress</h5>
+                                <p class="text-xs text-brand-muted">Trasformare l'adrenalina da ostacolo a carburante per il palcoscenico.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: CORSI & WORKSHOP -->
+    <section id="corsi" class="py-20 bg-brand-card border-t border-brand-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-bold uppercase tracking-widest text-brand-accent">Percorsi formativi</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-dark mt-2">Corsi & Workshop</h2>
+                <p class="text-base text-brand-muted mt-3">Dalla formazione individuale ai workshop di gruppo per organizzazioni e professionisti.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Corso 1 -->
+                <div class="bg-white rounded-xl border border-brand-border p-8 flex flex-col justify-between hover:border-brand-accent/50 transition-all">
+                    <div>
+                        <span class="text-[11px] font-bold uppercase tracking-wider text-brand-muted bg-gray-100 px-3 py-1 rounded-full">FORMAZIONE INDIVIDUALE</span>
+                        <h3 class="text-xl font-bold text-brand-dark mt-4 mb-3">La palestra del Public Speaking</h3>
+                        <p class="text-sm text-brand-muted mb-6 leading-relaxed">Percorso individuale su misura. Lavoriamo direttamente sui tuoi speech reali, pitch di vendita o presentazioni imminenti.</p>
+                        
+                        <ul class="space-y-2.5 text-sm mb-8">
+                            <li class="flex items-center gap-2">
+                                <svg class="w-4 h-4 text-brand-accent shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                Analisi personalizzata del tuo stile
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <svg class="w-4 h-4 text-brand-accent shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                Correzione postura, tono e ritmi
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <svg class="w-4 h-4 text-brand-accent shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                Esercitazioni pratiche e revisioni
+                            </li>
+                        </ul>
+                    </div>
+                    <button onclick="openModal('Palestra Public Speaking')" class="w-full bg-gray-100 hover:bg-brand-dark hover:text-white text-brand-dark font-semibold py-3 rounded-lg text-sm transition-colors">
+                        Richiedi informazioni
+                    </button>
+                </div>
+
+                <!-- Corso 2 -->
+                <div class="bg-white rounded-xl border-2 border-brand-accent p-8 flex flex-col justify-between relative shadow-lg">
+                    <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-brand-accent text-white text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wider">
+                        Più Richiesto
+                    </div>
+                    <div>
+                        <span class="text-[11px] font-bold uppercase tracking-wider text-brand-accent bg-brand-accent/10 px-3 py-1 rounded-full">WORKSHOP DI GRUPPO</span>
+                        <h3 class="text-xl font-bold text-brand-dark mt-4 mb-3">Dalla paura al palco</h3>
+                        <p class="text-sm text-brand-muted mb-6 leading-relaxed">2 giorni d'immersione totale per superare l'ansia da prestazione e acquisire padronanza espressiva davanti a qualsiasi pubblico.</p>
+                        
+                        <ul class="space-y-2.5 text-sm mb-8">
+                            <li class="flex items-center gap-2">
+                                <svg class="w-4 h-4 text-brand-accent shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                Tecniche di respirazione e presenza
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <svg class="w-4 h-4 text-brand-accent shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                Storytelling e ingaggio dell'uditorio
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <svg class="w-4 h-4 text-brand-accent shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                Simulazioni di palcoscenico reali
+                            </li>
+                        </ul>
+                    </div>
+                    <button onclick="openModal('Dalla Paura al Palco')" class="w-full bg-brand-accent hover:bg-brand-accent/90 text-white font-semibold py-3 rounded-lg text-sm transition-colors accent-glow">
+                        Richiedi Info
+                    </button>
+                </div>
+
+                <!-- Corso 3 -->
+                <div class="bg-white rounded-xl border border-brand-border p-8 flex flex-col justify-between hover:border-brand-accent/50 transition-all">
+                    <div>
+                        <span class="text-[11px] font-bold uppercase tracking-wider text-brand-muted bg-gray-100 px-3 py-1 rounded-full">MASTERCLASS SPECIALISTICA</span>
+                        <h3 class="text-xl font-bold text-brand-dark mt-4 mb-3">Humor & Ironia nel Discorso</h3>
+                        <p class="text-sm text-brand-muted mb-6 leading-relaxed">Impara a usare i meccanismi della stand-up comedy e della poesia per rendere memorabile qualsiasi presentazione, anche tecnica o aziendale.</p>
+                        
+                        <ul class="space-y-2.5 text-sm mb-8">
+                            <li class="flex items-center gap-2">
+                                <svg class="w-4 h-4 text-brand-accent shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                Costruzione della battuta pulita
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <svg class="w-4 h-4 text-brand-accent shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                Gestione dell'imprevisto e dell'ostilità
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <svg class="w-4 h-4 text-brand-accent shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                Alleggerire concetti complessi
+                            </li>
+                        </ul>
+                    </div>
+                    <button onclick="openModal('Humor e Ironia')" class="w-full bg-gray-100 hover:bg-brand-dark hover:text-white text-brand-dark font-semibold py-3 rounded-lg text-sm transition-colors">
+                        Richiedi informazioni
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: PER I PRIVATI -->
+    <section id="privati" class="py-20 bg-white border-t border-brand-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mb-12">
+                <span class="text-xs font-bold uppercase tracking-widest text-brand-accent">Percorsi individuali</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-dark mt-2">Public Speaking per i privati</h2>
+                <p class="text-base text-brand-muted mt-3">Per chi deve affrontare la tesi, una presentazione di carriera o vuole semplicemente smettere di tremare quando prende la parola.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="border border-brand-border p-6 rounded-xl hover:shadow-md transition-shadow">
+                    <h3 class="text-lg font-bold text-brand-dark mb-2">Superare il blocco da palco</h3>
+                    <p class="text-sm text-brand-muted leading-relaxed">Mani che sudano, voce che trema, mente che gira a vuoto. Lavoriamo sui sintomi fisici dell'ansia per trasformarli in energia comunicativa reale.</p>
+                </div>
+                
+                <div class="border border-brand-border p-6 rounded-xl hover:shadow-md transition-shadow">
+                    <h3 class="text-lg font-bold text-brand-dark mb-2">Scrittura dello speech</h3>
+                    <p class="text-sm text-brand-muted leading-relaxed">Non basta parlare bene: bisogna avere qualcosa da dire. Ti aiuto a strutturare i contenuti e a creare una scaletta d'impatto.</p>
+                </div>
+
+                <div class="border border-brand-border p-6 rounded-xl hover:shadow-md transition-shadow">
+                    <h3 class="text-lg font-bold text-brand-dark mb-2">Linguaggio del corpo e voce</h3>
+                    <p class="text-sm text-brand-muted leading-relaxed">Impara a occupare lo spazio con naturalezza, a modulare il tono della voce e a non sembrare un robot bloccato dietro un leggio.</p>
+                </div>
+
+                <div class="border border-brand-border p-6 rounded-xl hover:shadow-md transition-shadow">
+                    <h3 class="text-lg font-bold text-brand-dark mb-2">Preparazione colloqui & discorsi</h3>
+                    <p class="text-sm text-brand-muted leading-relaxed">Sessioni specifiche di preparazione per colloqui di lavoro cruciali, presentazioni pubbliche o eventi speciali.</p>
+                </div>
+            </div>
+
+            <div class="mt-12 bg-gray-50 border border-brand-border rounded-xl p-8 text-center max-w-3xl mx-auto">
+                <h3 class="text-xl font-bold text-brand-dark mb-2">Vuoi capire qual è il percorso più adatto a te?</h3>
+                <p class="text-sm text-brand-muted mb-6">Fissiamo una breve chiamata conoscitiva di 30 minuti senza impegno.</p>
+                <button onclick="openModal('Call Conoscitiva Privati')" class="bg-brand-dark hover:bg-brand-accent text-white px-8 py-3 rounded-lg text-sm font-semibold transition-colors">
+                    Prenota chiamata
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: PER LE AZIENDE -->
+    <section id="aziende" class="py-20 bg-brand-dark text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+                <div class="max-w-3xl">
+                    <span class="text-xs font-bold uppercase tracking-widest text-brand-accent">Corporate & Executive</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold mt-2 text-white">Formazione aziendale su misura</h2>
+                    <p class="text-base text-gray-400 mt-3">Migliora la comunicazione interna, i pitch di vendita e l'autorevolezza del tuo team dirigenziale.</p>
+                </div>
+                <button onclick="openModal('Formazione Aziendale')" class="bg-brand-accent hover:bg-brand-accent/90 text-white font-semibold px-6 py-3 rounded-lg text-sm transition-colors shrink-0 accent-glow">
+                    Contattami per parlarne
+                </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <div class="bg-gray-900 border border-gray-800 p-8 rounded-xl">
+                    <div class="w-10 h-10 bg-brand-accent/20 rounded-lg flex items-center justify-center text-brand-accent font-bold mb-6">01</div>
+                    <h3 class="text-xl font-bold mb-3">Executive coaching</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">Formazione riservata a C-Level, manager e portavoce aziendali per interventi pubblici, convention e media training.</p>
+                </div>
+
+                <div class="bg-gray-900 border border-gray-800 p-8 rounded-xl">
+                    <div class="w-10 h-10 bg-brand-accent/20 rounded-lg flex items-center justify-center text-brand-accent font-bold mb-6">02</div>
+                    <h3 class="text-xl font-bold mb-3">Pitch like a Pro</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">Preparazione intensiva per team di vendita e startup che devono presentare progetti a investitori o clienti strategici.</p>
+                </div>
+
+                <div class="bg-gray-900 border border-gray-800 p-8 rounded-xl">
+                    <div class="w-10 h-10 bg-brand-accent/20 rounded-lg flex items-center justify-center text-brand-accent font-bold mb-6">03</div>
+                    <h3 class="text-xl font-bold mb-3">Workshop di Team Communication</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">Sessioni d'aula pratiche ed esperienziali per migliorare la sintesi, la chiarezza ed eliminare i meeting inutili.</p>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-16">
+                <h3 class="text-xl font-bold mb-8 text-center">Cosa dicono dei miei percorsi aziendali</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-gray-900/50 p-6 rounded-xl border border-gray-800 italic text-gray-300">
+                        "Ciccio ha la capacità rara di scardinare le rigidità aziendali in poche ore. Il team ha cambiato radicalmente approccio alle presentazioni."
+                        <span class="block not-italic text-xs font-semibold text-brand-accent mt-4">— Director of HR, Tech Company</span>
+                    </div>
+                    <div class="bg-gray-900/50 p-6 rounded-xl border border-gray-800 italic text-gray-300">
+                        "Niente fuffa motivazionale, solo tecniche concrete ed efficaci riutilizzabili il giorno dopo in ufficio."
+                        <span class="block not-italic text-xs font-semibold text-brand-accent mt-4">— Head of Sales, B2B Enterprise</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: DICONO DI ME (TRUSTPILOT SLIDESHOW) -->
+    <section id="recensioni" class="py-20 bg-white border-t border-brand-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-widest text-brand-accent">Recensioni Verificate</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-dark mt-2">Dicono di me</h2>
+                    <p class="text-base text-brand-muted mt-2">Valutazione 4.5 / 5 su Trustpilot. Esperienze di chi ha partecipato ai corsi e alle consulenze.</p>
+                </div>
+
+                <!-- Navigation Controls -->
+                <div class="flex items-center gap-3 mt-6 md:mt-0">
+                    <button onclick="prevReview()" class="p-3 rounded-full border border-brand-border hover:bg-gray-100 transition-colors">
+                        <svg class="w-5 h-5 text-brand-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                    </button>
+                    <button onclick="nextReview()" class="p-3 rounded-full border border-brand-border hover:bg-gray-100 transition-colors">
+                        <svg class="w-5 h-5 text-brand-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Slideshow Container -->
+            <div class="relative bg-brand-card rounded-2xl border border-brand-border p-8 md:p-12 min-h-[260px] flex flex-col justify-between">
+                <!-- Stars & Badge -->
+                <div class="flex items-center justify-between mb-6">
+                    <div class="flex items-center gap-1 text-emerald-500">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <span class="text-xs font-bold text-brand-dark ml-2">5.0 su Trustpilot</span>
+                    </div>
+                    <span class="text-xs text-brand-muted font-medium">Recensione autentica</span>
+                </div>
+
+                <!-- Active Review Content -->
+                <div id="review-content" class="transition-opacity duration-300">
+                    <p id="review-text" class="text-lg md:text-xl text-brand-dark font-medium italic mb-6 leading-relaxed">
+                        "Ho fatto una sessione di mentoring in public speaking con Ciccio Rigoli in preparazione allo Startup Slam dei Digital Innovation Days e l'ho trovata davvero illuminante."
+                    </p>
+                    <div>
+                        <h4 id="review-author" class="font-bold text-brand-dark text-base">Elena Setaro</h4>
+                        <p id="review-title" class="text-xs text-brand-accent font-semibold mt-0.5">Consigli pratici e impatto immediato</p>
+                    </div>
+                </div>
+
+                <!-- Slide Dots -->
+                <div class="flex justify-center gap-2 mt-8" id="dots-container"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: LIBRI -->
+    <section id="libri" class="py-20 bg-white border-t border-brand-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mb-16">
+                <span class="text-xs font-bold uppercase tracking-widest text-brand-accent">Pubblicazioni</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-dark mt-2">I miei libri e manuali</h2>
+                <p class="text-base text-brand-muted mt-3">Manuali sul public speaking, sul poetry slam e le mie poesie.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl">
+                <!-- Libro 1 -->
+                <div class="flex flex-col bg-brand-card rounded-xl border border-brand-border overflow-hidden justify-between">
+                    <div class="h-64 bg-gray-100 overflow-hidden border-b border-brand-border relative group">
+                        <img src="COPERTINA_PUBLIC_POETRY_SPEAKING.JPG" alt="Public Poetry Speaking" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.src='https://via.placeholder.com/400x500/111111/fa029b?text=Public+Poetry+Speaking'">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-[10px] tracking-widest uppercase text-brand-accent font-bold block mb-2">MANUALE PRATICO</span>
+                        <h3 class="text-xl font-extrabold text-brand-dark mb-2">Public Poetry Speaking</h3>
+                        <p class="text-xs text-brand-muted leading-relaxed mb-4">Un prontuario di sopravvivenza per chiunque debba salire su un palco o parlare in una riunione importante. Impara a gestire l'ansia e a catturare l'attenzione.</p>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <a href="https://www.amazon.it/Public-Poetry-Speaking-Ciccio-Rigoli-ebook/dp/B0FB22SSR3/" target="_blank" class="w-full inline-flex justify-center items-center bg-brand-dark hover:bg-brand-accent text-white text-xs font-semibold py-3 px-4 rounded-lg transition-colors">
+                            Acquista su Amazon
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Libro 2 -->
+                <div class="flex flex-col bg-brand-card rounded-xl border border-brand-border overflow-hidden justify-between">
+                    <div class="h-64 bg-gray-100 overflow-hidden border-b border-brand-border relative group">
+                        <img src="COPERTINA_GAME_BOY.JPG" alt="Game Boy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.src='https://via.placeholder.com/400x500/fa029b/ffffff?text=Game+Boy'">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-[10px] tracking-widest uppercase text-brand-accent font-bold block mb-2">POESIA</span>
+                        <h3 class="text-xl font-extrabold text-brand-dark mb-2">Game Boy</h3>
+                        <p class="text-xs text-brand-muted leading-relaxed mb-4">Le poesie che ho portato sul palco negli anni. Con la partecipazione di Britney Spears e Mauro Repetto.</p>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <a href="https://www.amazon.it/Game-Boy-Poesie-Ciccio-Rigoli/dp/B0H9S4BYLW/" target="_blank" class="w-full inline-flex justify-center items-center bg-brand-dark hover:bg-brand-accent text-white text-xs font-semibold py-3 px-4 rounded-lg transition-colors">
+                            Acquista su Amazon
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Libro 3 -->
+                <div class="flex flex-col bg-brand-card rounded-xl border border-brand-border overflow-hidden justify-between">
+                    <div class="h-64 bg-gray-100 overflow-hidden border-b border-brand-border relative group">
+                        <img src="COPERTINA_POETRY_SLAM.JPG" alt="Poetry Slam" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.src='https://via.placeholder.com/400x500/111111/ffffff?text=Poetry+Slam'">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-[10px] tracking-widest uppercase text-brand-accent font-bold block mb-2">SAGGIO & ANTOLOGIA</span>
+                        <h3 class="text-xl font-extrabold text-brand-dark mb-2">Poetry Slam</h3>
+                        <p class="text-xs text-brand-muted mb-2 font-medium">Ciccio Rigoli, Paolo Agrati & Davide Passoni</p>
+                        <p class="text-xs text-brand-muted leading-relaxed mb-4">La guida completa per conoscere il Poetry Slam e migliorare le proprie performance sul palco.</p>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <a href="https://www.amazon.it/Poetry-slam-Agrati/dp/8893573628/" target="_blank" class="w-full inline-flex justify-center items-center bg-brand-dark hover:bg-brand-accent text-white text-xs font-semibold py-3 px-4 rounded-lg transition-colors">
+                            Acquista su Amazon
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: SPETTACOLI (CATALOGO REALE) -->
+    <section id="spettacoli" class="py-20 bg-gray-50 border-t border-brand-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mb-16">
+                <span class="text-xs font-bold uppercase tracking-widest text-brand-accent">Catalogo Spettacoli</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-dark mt-2">Spettacoli & Performance</h2>
+                <p class="text-base text-brand-muted mt-3">I miei spettacoli mettono assieme il poetry slam e la stand up comedy. Spettacoli che fanno ridere e in cui sono il primo a divertirmi.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <!-- Spettacolo 1 -->
+                <div class="bg-white rounded-xl border border-brand-border p-8 flex flex-col justify-between hover:shadow-md transition-shadow">
+                    <div>
+                        <span class="text-[10px] font-bold uppercase tracking-wider text-purple-700 bg-purple-50 px-3 py-1 rounded-full border border-purple-200">STAND-UP COMEDY & POETRY SLAM</span>
+                        <h3 class="text-2xl font-extrabold text-brand-dark mt-4 mb-2">Senti e trema</h3>
+                        <p class="text-xs text-brand-accent font-semibold italic mb-4">Uno spettacolo di poetry slam, stand up comedy e twerking</p>
+                        
+                        <p class="text-xs text-brand-muted leading-relaxed mb-4">
+                            Madre Teresa è un’ottima ispirazione per le startup, mentre le cover band preparano un Nuovo Ordine Mondiale in cui Ligabue e Vasco Rossi sono i sovrani indiscussi delle vocali.
+                        </p>
+                        <p class="text-xs text-brand-muted leading-relaxed mb-6">
+                            L’ultimo spettacolo prima del dominio sperato dell’Intelligenza Artificiale (sperando che prenda possesso del sito dell’INPS). Fatto quasi esclusivamente per fare colpo su Elettra Lamborghini.
+                        </p>
+                    </div>
+                    <button onclick="openModal('Spettacolo: Senti e Trema')" class="w-full bg-brand-dark hover:bg-brand-accent text-white font-semibold py-3 rounded-lg text-xs transition-colors">
+                        Organizza questo spettacolo
+                    </button>
+                </div>
+
+                <!-- Spettacolo 2 -->
+                <div class="bg-white rounded-xl border border-brand-border p-8 flex flex-col justify-between hover:shadow-md transition-shadow">
+                    <div>
+                        <span class="text-[10px] font-bold uppercase tracking-wider text-pink-700 bg-pink-50 px-3 py-1 rounded-full border border-pink-200">READING POETICO</span>
+                        <h3 class="text-2xl font-extrabold text-brand-dark mt-4 mb-2">Io sto bene/Io sto male</h3>
+                        <p class="text-xs text-brand-accent font-semibold italic mb-4">Un reading al contrattacco con elmi e armi nuove</p>
+                        
+                        <p class="text-xs text-brand-muted leading-relaxed mb-4">
+                            Dai CCCP ai CSI, Giovanni Lindo Ferretti ha attraversato gli anni dell’edonismo reaganiano e della disgregazione dell'Europa, accompagnando la mia vita.
+                        </p>
+                        <p class="text-xs text-brand-muted leading-relaxed mb-6">
+                            Cosa succede se stacchiamo le parole dalla musica? Una selezione di testi per vedere in maniera diversa le parole di Ferretti, con aneddoti sulla storia dei CCCP e la mia storia con loro.
+                        </p>
+                    </div>
+                    <button onclick="openModal('Spettacolo: Io Sto Bene/Io Sto Male')" class="w-full bg-brand-dark hover:bg-brand-accent text-white font-semibold py-3 rounded-lg text-xs transition-colors">
+                        Organizza questo spettacolo
+                    </button>
+                </div>
+
+                <!-- Spettacolo 3 -->
+                <div class="bg-white rounded-xl border border-brand-border p-8 flex flex-col justify-between hover:shadow-md transition-shadow">
+                    <div>
+                        <span class="text-[10px] font-bold uppercase tracking-wider text-blue-700 bg-blue-50 px-3 py-1 rounded-full border border-blue-200">MONOLOGO & POWERPOINT</span>
+                        <h3 class="text-2xl font-extrabold text-brand-dark mt-4 mb-2">Una vita dabadan dabadan</h3>
+                        <p class="text-xs text-brand-accent font-semibold italic mb-4">Un monologo su Umberto Tozzi e me</p>
+                        
+                        <p class="text-xs text-brand-muted leading-relaxed mb-4">
+                            Dalla cassetta del walkman a 12 anni fino al colloquio di lavoro concluso parlando della costante presenza degli operai nella poetica di Umberto Tozzi.
+                        </p>
+                        <p class="text-xs text-brand-muted leading-relaxed mb-6">
+                            Le sue canzoni diventano il pretesto per raccontare cosa è successo negli ultimi 30 anni, con una presentazione in PowerPoint che mischia De Saussure, alieni e Marco Masini.
+                        </p>
+                    </div>
+                    <button onclick="openModal('Spettacolo: Una Vita Dabadan')" class="w-full bg-brand-dark hover:bg-brand-accent text-white font-semibold py-3 rounded-lg text-xs transition-colors">
+                        Organizza questo spettacolo
+                    </button>
+                </div>
+            </div>
+
+            <!-- Call to action booking -->
+            <div class="bg-white border border-brand-border rounded-xl p-8 text-center max-w-2xl mx-auto">
+                <h3 class="text-xl font-bold text-brand-dark mb-2">Vuoi organizzare un mio spettacolo?</h3>
+                <p class="text-sm text-brand-muted mb-6">Contattami per verificare le date disponibili e per ricevere le schede tecniche dei singoli spettacoli.</p>
+                <button onclick="openModal('Booking Spettacoli Generale')" class="bg-brand-accent hover:bg-brand-accent/90 text-white font-semibold px-8 py-3 rounded-lg text-sm transition-colors accent-glow">
+                    Scrivimi per le date
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER & NEWSLETTER -->
+    <footer class="bg-brand-dark text-white pt-16 pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 pb-12 border-b border-gray-800">
+                <div class="lg:col-span-6 space-y-4">
+                    <span class="text-xl font-extrabold tracking-tight">CICCIO RIGOLI</span>
+                    <p class="text-sm text-gray-400 max-w-md">
+                        Formazione di Public Speaking, comunicazione efficace e performance dal vivo. Trasforma la paura del palco in autorità espressiva.
+                    </p>
+                </div>
+
+                <!-- Newsletter Form -->
+                <div class="lg:col-span-6 bg-gray-900 p-6 rounded-xl border border-gray-800">
+                    <h4 class="font-bold text-base mb-1">Public Poetry Speaking</h4>
+                    <p class="text-xs text-gray-400 mb-4">Un’email ogni settimana con consigli, ragionamenti e storie su public speaking, comunicazione e spettacoli.</p>
+                    <form onsubmit="handleNewsletter(event)" class="flex gap-2">
+                        <input type="email" required placeholder="Inserisci la tua email" class="bg-gray-800 border border-gray-700 text-white placeholder-gray-500 rounded-lg px-4 py-2 text-sm w-full focus:outline-none focus:border-brand-accent">
+                        <button type="submit" class="bg-brand-accent hover:bg-brand-accent/90 text-white font-semibold text-xs px-5 py-2 rounded-lg transition-colors shrink-0 accent-glow">Iscriviti</button>
+                    </form>
+                    <p id="nl-msg" class="text-xs text-brand-accent mt-2 hidden">Grazie per esserti iscritto alla newsletter!</p>
+                </div>
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-gray-500">
+                <p>© 2026 Francesco Saverio Rigoli - Tutti i diritti riservati.</p>
+                <div class="flex space-x-6 mt-4 sm:mt-0">
+                    <a href="https://instagram.com" target="_blank" class="hover:text-white transition-colors">Instagram</a>
+                    <a href="https://linkedin.com" target="_blank" class="hover:text-white transition-colors">LinkedIn</a>
+                    <a href="https://facebook.com" target="_blank" class="hover:text-white transition-colors">Facebook</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODALE CONTATTI -->
+    <div id="contact-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-xl max-w-md w-full p-6 relative shadow-2xl border border-brand-border">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-brand-dark">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            <span class="text-[11px] font-bold uppercase tracking-wider text-brand-accent">Contatto Diretto</span>
+            <h3 id="modal-title" class="text-xl font-bold text-brand-dark mt-1 mb-1">Parliamo del tuo progetto</h3>
+            <p class="text-xs text-brand-muted mb-6">Compila il modulo o scrivi a info@cicciorigoli.com</p>
+
+            <form onsubmit="handleContactSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold text-brand-dark mb-1">Nome e Cognome</label>
+                    <input type="text" required class="w-full border border-brand-border rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-brand-accent">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-brand-dark mb-1">Email</label>
+                    <input type="email" required class="w-full border border-brand-border rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-brand-accent">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-brand-dark mb-1">Sei interessato a:</label>
+                    <select id="modal-select" class="w-full border border-brand-border rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-brand-accent">
+                        <option value="Coaching 1-on-1">Coaching 1-on-1</option>
+                        <option value="Formazione Aziendale">Formazione Aziendale</option>
+                        <option value="Workshop di Gruppo">Workshop di Gruppo</option>
+                        <option value="Booking Spettacolo">Booking Spettacolo</option>
+                        <option value="Altro">Altro</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-brand-dark mb-1">Messaggio</label>
+                    <textarea rows="3" required class="w-full border border-brand-border rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-brand-accent"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-brand-accent hover:bg-brand-accent/90 text-white font-semibold py-3 rounded-lg text-sm transition-colors accent-glow">
+                    Invia Messaggio
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Reviews Data
+        const reviews = [
+            {
+                author: "Elena Setaro",
+                title: "Consigli pratici e impatto immediato",
+                text: "Ho fatto una sessione di mentoring in public speaking con Ciccio Rigoli in preparazione allo Startup Slam dei Digital Innovation Days e l'ho trovata davvero illuminante. In pochissimo tempo è riuscito a individuare i miei punti di forza e debolezza. Consigliatissimo!"
+            },
+            {
+                author: "Virginia Nencetti",
+                title: "Formatore competente e affidabile",
+                text: "Ho seguito un corso nel suo studio e il pubblico era il più vario: liberi professionisti, attori, dirigenti d'azienda. In sole tre ore ho imparato un sacco di tecniche e consigli pratici per mantenere viva l'attenzione di chi ascolta."
+            },
+            {
+                author: "Serena Tommasini",
+                title: "I consigli che avrei voluto ricevere prima",
+                text: "I consigli che avrei voluto ricevere prima, dati con garbo e simpatia. I miei public speech sono nettamente divisi in due: quelli prima di incontrare Ciccio, e quelli dopo."
+            },
+            {
+                author: "Andrea Cominacini",
+                title: "Public Speaking e Project Management",
+                text: "Ottimo corso di Public Speaking. Stra consigliato. Molti casi pratici, interazione e role play. Anche un pizzico di sano umorismo che non guasta e abbatte la tensione!"
+            },
+            {
+                author: "Eleonora",
+                title: "Piccole regole, grandi cambiamenti",
+                text: "Il corso mi ha permesso di comprendere i lati positivi e negativi del mio modo di parlare in pubblico. Spesso ho ascoltato speaker di altri corsi e ho pensato: 'Dovrebbero fare un corso con Ciccio'."
+            }
+        ];
+
+        let currentReviewIndex = 0;
+
+        function renderReview() {
+            const rev = reviews[currentReviewIndex];
+            const content = document.getElementById('review-content');
+            
+            content.style.opacity = '0';
+            setTimeout(() => {
+                document.getElementById('review-text').innerText = `"${rev.text}"`;
+                document.getElementById('review-author').innerText = rev.author;
+                document.getElementById('review-title').innerText = rev.title;
+                content.style.opacity = '1';
+            }, 150);
+
+            renderDots();
+        }
+
+        function renderDots() {
+            const container = document.getElementById('dots-container');
+            container.innerHTML = '';
+            reviews.forEach((_, idx) => {
+                const dot = document.createElement('button');
+                dot.className = `w-2.5 h-2.5 rounded-full transition-all ${idx === currentReviewIndex ? 'bg-brand-accent w-6' : 'bg-gray-300'}`;
+                dot.onclick = () => { currentReviewIndex = idx; renderReview(); };
+                container.appendChild(dot);
+            });
+        }
+
+        function nextReview() {
+            currentReviewIndex = (currentReviewIndex + 1) % reviews.length;
+            renderReview();
+        }
+
+        function prevReview() {
+            currentReviewIndex = (currentReviewIndex - 1 + reviews.length) % reviews.length;
+            renderReview();
+        }
+
+        // Init review dots
+        renderDots();
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Contact Modal Logic
+        function openModal(topic) {
+            const modal = document.getElementById('contact-modal');
+            const select = document.getElementById('modal-select');
+            
+            if(topic) {
+                for(let i=0; i < select.options.length; i++) {
+                    if(select.options[i].value.toLowerCase().includes(topic.toLowerCase())) {
+                        select.selectedIndex = i;
+                        break;
+                    }
+                }
+            }
+            modal.classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('contact-modal').classList.add('hidden');
+        }
+
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            alert('Grazie per il messaggio! Ti risponderò al più presto.');
+            closeModal();
+        }
+
+        function handleNewsletter(e) {
+            e.preventDefault();
+            document.getElementById('nl-msg').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
